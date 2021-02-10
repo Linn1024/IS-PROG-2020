@@ -33,7 +33,7 @@ void PolygonsCheck() {
     assert(cpc.perimeter() == 12);
     InheritancePolygonalChainCheck(&pc, &cpc);
     assert(p.area() == 6);
-    assert(abs(tr.height() - 0.4) < EPS);
+    assert(abs(tr.height() - 4) < EPS);
     assert(t.hasRightAngle());
     Triangle trSharpestAsMyHand(3, new Point[3]{Point(0, 0), Point(1, 1), Point(0, 100)});
     assert(!trSharpestAsMyHand.hasRightAngle());
