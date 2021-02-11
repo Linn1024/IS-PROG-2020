@@ -39,6 +39,13 @@ void PolygonsCheck() {
     assert(!trSharpestAsMyHand.hasRightAngle());
     RegularPolygon rp(4, new Point[4]{Point(0, 0), Point(0, 2), Point(2, 2), Point(2, 0)});
     assert(abs(rp.area() - 4) < EPS && abs(rp.perimeter() - 8) < EPS);
+    Trapezoid tra(4, b);
+    tra = tr;
+    assert(abs(tra.height() - 4) < EPS);
+    Trapezoid* trap = new Trapezoid(4, b);
+    Trapezoid trCopy(*trap);
+    delete trap;
+    assert(abs(trCopy.height() - 4) < EPS);
 }
 
 int main() {
