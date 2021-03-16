@@ -42,6 +42,9 @@ void PolynomialOperators() {
     assert(c.get(4) == 3053.25);
     assert((-c) == (-(-(-c))));
     assert((-c)[5] == -3);
+   	auto g = b;
+   	g[3] = 0;
+   	assert(g == b);
 }
 
 
