@@ -8,6 +8,20 @@
 
 using namespace std;
 
+class myForwardIterator : public vector<int>::iterator {
+    using T = vector<int>::iterator;
+    using T::T;
+public:
+
+    auto operator--(int) const = delete;
+    auto operator--() const = delete;
+    auto operator-(difference_type __n) const = delete;
+    myForwardIterator(__normal_iterator <pointer, vector<int>> iterator) : T(iterator){
+
+    }
+};
+
+
 void check() {
 	vector<int> a{1, 2, 3, 4};
 	vector<int> b{1, 2, 3, 4, 2};
@@ -32,9 +46,8 @@ void check() {
 	assert(isPartitioned(a.begin(), a.end(), [](int x){return x <= 3;}));
 	assert(findNot(a.begin(), a.end(), 1) == ++a.begin());	
 	assert(findNot(d.begin(), d.end(), 1) == d.end());	
-	assert(findBackward(b.begin(), b.end(), 2) == --b.end());
-}
-
+	assert(findBackward(static_cast<myForwardIterator>(b.begin()), static_cast<myForwardIterator>(b.end()), 2) == --b.end());}
+	assert(findBackward(static_cast<myForwardIterator>(b.begin()), static_cast<myForwardIterator>(b.end()), 5) == b.end());}
 
 int main() {
     check();
