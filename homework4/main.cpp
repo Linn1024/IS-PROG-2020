@@ -46,8 +46,8 @@ void check() {
 	assert(isPartitioned(a.begin(), a.end(), [](int x){return x <= 3;}));
 	assert(findNot(a.begin(), a.end(), 1) == ++a.begin());	
 	assert(findNot(d.begin(), d.end(), 1) == d.end());	
-	assert(findBackward(static_cast<myForwardIterator>(b.begin()), static_cast<myForwardIterator>(b.end()), 2) == --b.end());}
-	assert(findBackward(static_cast<myForwardIterator>(b.begin()), static_cast<myForwardIterator>(b.end()), 5) == b.end());}
+	assert(findBackward(static_cast<myForwardIterator>(b.begin()), static_cast<myForwardIterator>(b.end()), 2) == --b.end());
+	assert(findBackward(static_cast<myForwardIterator>(b.begin()), static_cast<myForwardIterator>(b.end()), 5) == b.end());
 
 int main() {
     check();
