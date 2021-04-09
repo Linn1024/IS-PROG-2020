@@ -29,7 +29,7 @@ void check() {
 	vector<int> b{1, 2, 3, 4, 2};
 	vector<int> c{4, 3, 2, 1, 0};
 	vector<int> d{1, 1};
-
+	set<int> s{1, 2, 3};
 
 	assert(allOf(a.begin(), a.end(), [](int x){return x <= 5;}));
 	assert(!allOf(a.begin(), a.end(), [](int x){return x <= 3;}));
@@ -51,6 +51,8 @@ void check() {
 	assert(findBackward(static_cast<myForwardIterator>(b.begin()), static_cast<myForwardIterator>(b.end()), 2) == --b.end());
 	assert(findBackward(static_cast<myForwardIterator>(b.begin()), static_cast<myForwardIterator>(b.end()), 5) == b.end());
 	assert(isPalindrome(d.begin(), d.end(), [](int x, int y){return x == y;}));
+	assert(isPalindrome(s.begin(), s.end(), [](int x, int y){return x + y > 0;}));
+
 }
 int main() {
     check();
