@@ -5,6 +5,8 @@
 #include <vector>
 #include <set>
 #include <iterator>
+#include <functional>
+
 
 using namespace std;
 
@@ -48,7 +50,7 @@ void check() {
 	assert(findNot(d.begin(), d.end(), 1) == d.end());	
 	assert(findBackward(static_cast<myForwardIterator>(b.begin()), static_cast<myForwardIterator>(b.end()), 2) == --b.end());
 	assert(findBackward(static_cast<myForwardIterator>(b.begin()), static_cast<myForwardIterator>(b.end()), 5) == b.end());
-
+	assert(isPalindrome(d.begin(), d.end(), [](int x, int y){return x == y;}));
 }
 int main() {
     check();
