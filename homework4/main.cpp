@@ -18,7 +18,7 @@ public:
     auto operator--(int) const = delete;
     auto operator--() const = delete;
     auto operator-(difference_type __n) const = delete;
-    myForwardIterator(vector<int>::it) : T(it){}
+    myForwardIterator(vector<int>::iterator it) : T(it){}
 };
 
 
