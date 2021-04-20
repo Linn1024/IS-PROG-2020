@@ -1,2 +1,2 @@
 all:
-	g++ -Wall -Wextra *.cpp -o main
+	g++ -Wall -Wextra *.cpp -std=c++17 -o main
