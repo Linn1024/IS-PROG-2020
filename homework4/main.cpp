@@ -29,6 +29,10 @@ void check() {
 	vector<int> d{1, 1};
 	vector<int> e{1, 2, 3, 4, 3, 2, 1};
 	vector<int> f{1, 2, 3, 4, 3, 2, 3};
+	vector<int> e1{1, 2, 3, 3, 2, 1};
+	vector<int> f1{1, 2, 3, 4, 2, 1};
+
+
 	vector<int> g{1};
 	set<int> s{1, 2, 3};
 
@@ -54,6 +58,8 @@ void check() {
 	assert(findBackward(static_cast<myForwardIterator>(b.begin()), static_cast<myForwardIterator>(b.end()), 5) == b.end());
 	assert(isPalindrome(e.begin(), e.end(), [](int x, int y){return x == y;}));
 	assert(!isPalindrome(f.begin(), f.end(), [](int x, int y){return x == y;}));
+	assert(isPalindrome(e1.begin(), e1.end(), [](int x, int y){return x == y;}));
+	assert(!isPalindrome(f1.begin(), f1.end(), [](int x, int y){return x == y;}));
 	assert(isPalindrome(s.begin(), s.end(), [](int x, int y){return x + y > 0;}));
 	assert(isPalindrome(g.begin(), g.end(), [](int x, int y){return x == y;}));
 }
