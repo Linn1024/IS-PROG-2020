@@ -29,6 +29,7 @@ void check() {
 	vector<int> d{1, 1};
 	vector<int> e{1, 2, 3, 4, 3, 2, 1};
 	vector<int> f{1, 2, 3, 4, 3, 2, 3};
+	vector<int> g{1};
 	set<int> s{1, 2, 3};
 
 	assert(allOf(a.begin(), a.end(), [](int x){return x <= 5;}));
@@ -53,7 +54,7 @@ void check() {
 	assert(isPalindrome(e.begin(), e.end(), [](int x, int y){return x == y;}));
 	assert(!isPalindrome(f.begin(), f.end(), [](int x, int y){return x == y;}));
 	assert(isPalindrome(s.begin(), s.end(), [](int x, int y){return x + y > 0;}));
-
+	assert(isPalindrome(g.begin(), g.end(), [](int x, int y){return x == y;}));
 }
 int main() {
     check();
