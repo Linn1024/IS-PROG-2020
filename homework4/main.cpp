@@ -43,6 +43,7 @@ void check() {
 	assert(isSorted(a.begin(), a.end(), [](int x, int y){return x < y;}));
 	assert(!isSorted(b.begin(), b.end(), [](int x, int y){return x < y;}));
 	assert(isSorted(a.begin(), a.end()));
+	assert(!isSorted(b.begin(), b.end()));
 	assert(isSorted(c.begin(), c.end(), [](int x, int y){return x > y;}));
 	assert(isPartitioned(a.begin(), a.end(), [](int x){return x <= 3;}));
 	assert(!isPartitioned(a.begin(), a.end(), [](int x){return x % 2 == 0;}));
