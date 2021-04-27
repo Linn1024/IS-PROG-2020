@@ -31,6 +31,9 @@ void check() {
 	vector<int> f{1, 2, 3, 4, 3, 2, 3};
 	vector<int> e1{1, 2, 3, 3, 2, 1};
 	vector<int> f1{1, 2, 3, 4, 2, 1};
+	vector<pair<int ,int>> h{{1, 2}, {2, 3}, {3, 4}};
+
+
 
 
 	vector<int> g{1};
@@ -62,6 +65,7 @@ void check() {
 	assert(!isPalindrome(f1.begin(), f1.end(), [](int x, int y){return x == y;}));
 	assert(isPalindrome(s.begin(), s.end(), [](int x, int y){return x + y > 0;}));
 	assert(isPalindrome(g.begin(), g.end(), [](int x, int y){return x == y;}));
+	assert(isSorted(h.begin(), h.end(), [](pair<int, int> x, pair<int, int> y) {return x < y;}));
 }
 int main() {
     check();
