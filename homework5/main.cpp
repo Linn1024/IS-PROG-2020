@@ -179,13 +179,8 @@ int main(){
     c.addFirst(2);
     c.addFirst(3);
     c.addFirst(4);
-    try {
-        c.addFirst(5);
-        throw "out of range";
-    }
-    catch (const exception& e) {
-        print(e.what());
-    }
+    print<ss>(c);
+    c.addFirst(5);
     print<ss>(c);
     c.changeCapacity(5);
     print<ss>(c);
@@ -195,11 +190,13 @@ int main(){
     print<ss>(c);
     callAssert(equal_to<>(), ss.str(), "4 3 2 1\n"
                                        "\n"
-                                       "4 3 2 1\n"
+                                       "5 4 3 2\n"
                                        "\n"
-                                       "6 4 3 2 1\n"
+                                       "5 4 3 2\n"
                                        "\n"
-                                       "1 2 3 4 6\n"
+                                       "6 5 4 3 2\n"
+                                       "\n"
+                                       "2 3 4 5 6\n"
                                        "\n");
     print("Everything is ok");
 }
