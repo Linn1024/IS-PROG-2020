@@ -66,6 +66,7 @@ void check() {
 	assert(isPalindrome(s.begin(), s.end(), [](int x, int y){return x + y > 0;}));
 	assert(isPalindrome(g.begin(), g.end(), [](int x, int y){return x == y;}));
 	assert(isSorted(h.begin(), h.end(), [](pair<int, int> x, pair<int, int> y) {return x < y;}));
+	assert(isSorted(h.begin(), h.end()));
 }
 int main() {
     check();
