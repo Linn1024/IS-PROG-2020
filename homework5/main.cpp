@@ -1,7 +1,6 @@
 #include<iostream>
 #include<sstream>
 #include<vector>
-#include <experimental/type_traits>
 #include <tuple>
 #include <utility>
 #include <algorithm>
@@ -58,14 +57,8 @@ struct vector1 : public vector<T>{
 int depth = 0;
 int maxDepth = 0;
 
-template<typename T>                                                                             //cout everything that has iterator begin()
-using hasIterator_t = decltype( std::declval<T&>().begin());
 
-template<typename T>
-constexpr bool hasIterator = std::experimental::is_detected<hasIterator_t, T>::value && !std::is_base_of<string, T>::value;
-
-template <class T>
-typename enable_if<hasIterator<T>, ostream&>::type operator<<(ostream& out, const T& a){
+ostream& operator<<(ostream& out, const CircularBuffer<int>& a){
     depth++;
     int myDepth = depth;
     maxDepth = max(maxDepth, depth);
@@ -89,10 +82,6 @@ typename enable_if<hasIterator<T>, ostream&>::type operator<<(ostream& out, cons
     return out;
 }
 
-template <class T>
-typename enable_if<hasIterator<T>, void>::type sort(T& a){                                       //sort whole container
-    sort(a.begin(), a.end());
-}
 
 template<class Ch, class Tr, class... Args>                                                      //cout tuple
 auto& operator<<(std::basic_ostream<Ch, Tr>& os, std::tuple<Args...> const& t) {
@@ -125,6 +114,7 @@ struct matrix : public vector<vector<T>>{
 };
 
 stringstream ss;
+
 
 template <auto& out=cout, typename T>                                                         //function that prints any values with space delimeter
 void print(const T& t)                                                                           //and make endl in the end (but it doesn't even matter)
