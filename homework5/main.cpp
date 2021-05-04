@@ -169,6 +169,13 @@ int main(){
     c.addFirst(2);
     c.addFirst(3);
     c.addFirst(4);
+	try {
+        c[4] = 1;
+        throw "out of range";
+    }
+    catch (const exception& e) {
+        print(e.what());
+    }
     print<ss>(c);
     c.addFirst(5);
     print<ss>(c);
