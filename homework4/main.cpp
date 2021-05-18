@@ -12,9 +12,9 @@ using namespace std;
 
 class myForwardIterator : public vector<int>::iterator {
     using T = vector<int>::iterator;
-    using T::T;
 public:
 
+    using iterator_category = std::input_iterator_tag;
     auto operator--(int) const = delete;
     auto operator--() const = delete;
     auto operator-(difference_type __n) const = delete;
