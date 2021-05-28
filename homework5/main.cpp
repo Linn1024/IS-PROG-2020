@@ -200,5 +200,8 @@ int main(){
                                        "\n"
                                        "2 3 4 5 6\n"
                                        "\n");
+    CircularBuffer<string> cs(4);
+    cs.addFirst("First");	
+    print(cs[0]);
     print("Everything is ok");
 }
